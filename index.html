@@ -57,7 +57,7 @@
                 </div>
               </div>
               <div class="submit-container">
-                <button class="btn" type="submit">Submit</button>
+                <button class="btn" type="button">Submit</button>
               </div>
             </div>
 
@@ -159,7 +159,7 @@
                   </svg>
                 </div>
                 <div class="success-message__rating-container">
-                  <p>You selected <span id="user-rating">4</span> out of 5</p>
+                  <p>You selected <span id="user-rating">0</span> out of 5</p>
                 </div>
                 <div class="success-message__text">
                   <h2>Thank you!</h2>
@@ -407,16 +407,19 @@
       }
 
       document.addEventListener("DOMContentLoaded", () => {
-        const ratingButtons = document.querySelectorAll(".btn--rating");
+        const ratingButtons = document.querySelector(
+          ".rating-component__rating-buttons",
+        );
         const userRating = document.querySelector("#user-rating");
 
-        ratingButtons.forEach((btn) => {
-          btn.addEventListener("click", () => {
-            unselectAll(ratingButtons);
-            btn.classList.add("selected");
-            rating = btn.dataset.rating;
-            userRating.textContent = rating;
-          });
+        ratingButtons.addEventListener("click", (e) => {
+          const btn = e.target.closest(".btn--rating");
+          if (!btn) return;
+          const ratingBtns = ratingContainer.querySelectorAll(".btn--rating");
+          unselectAll(ratingBtns);
+          btn.classList.add("selected");
+          rating = btn.dataset.rating;
+          userRating.textContent = rating;
         });
 
         const submitButton = document.querySelector(".btn");
