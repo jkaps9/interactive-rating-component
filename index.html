@@ -119,6 +119,9 @@
 
       button {
         font-family: inherit;
+        transition:
+          color 0.3s,
+          background-color 0.3s;
       }
 
       button:hover {
@@ -243,5 +246,23 @@
         }
       }
     </style>
+
+    <script>
+      function unselectAll(buttonList) {
+        buttonList.forEach((btn) => {
+          btn.classList.remove("selected");
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const ratingButtons = document.querySelectorAll(".btn--rating");
+        ratingButtons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            unselectAll(ratingButtons);
+            btn.classList.add("selected");
+          });
+        });
+      });
+    </script>
   </body>
 </html>
