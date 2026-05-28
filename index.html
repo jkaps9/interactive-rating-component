@@ -204,6 +204,10 @@
         gap: 2rem;
       }
 
+      .rating-component__content[aria-hidden="true"] {
+        display: none;
+      }
+
       .rating-component__icon {
         align-items: center;
         background: var(--colors-grey-900);
@@ -248,6 +252,8 @@
     </style>
 
     <script>
+      let rating = "0";
+
       function unselectAll(buttonList) {
         buttonList.forEach((btn) => {
           btn.classList.remove("selected");
@@ -260,7 +266,21 @@
           btn.addEventListener("click", () => {
             unselectAll(ratingButtons);
             btn.classList.add("selected");
+            rating = btn.dataset.rating;
           });
+        });
+
+        const submitButton = document.querySelector(".btn");
+        const mainContent = document.querySelector(
+          ".rating-component__content",
+        );
+
+        submitButton.addEventListener("click", () => {
+          if (rating === "0") {
+            alert("Please select a rating before submitting.");
+          } else {
+            mainContent.setAttribute("aria-hidden", "true");
+          }
         });
       });
     </script>
