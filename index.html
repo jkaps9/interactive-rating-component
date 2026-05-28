@@ -400,13 +400,13 @@
     <script>
       let rating = "0";
 
-      function unselectAll(buttonList) {
-        buttonList.forEach((btn) => {
-          btn.classList.remove("selected");
-        });
-      }
-
       document.addEventListener("DOMContentLoaded", () => {
+        function unselectAll(buttonList) {
+          buttonList.forEach((btn) => {
+            btn.classList.remove("selected");
+          });
+        }
+
         const ratingButtons = document.querySelector(
           ".rating-component__rating-buttons",
         );
