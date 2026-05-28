@@ -121,6 +121,12 @@
         font-family: inherit;
       }
 
+      button:hover {
+        background: var(--colors-white);
+        color: var(--colors-grey-900);
+        cursor: pointer;
+      }
+
       .container {
         margin-inline: auto;
         max-width: 1240px;
@@ -164,6 +170,11 @@
           clamp(1rem, 0.8239rem + 0.7512vw, 1.5rem);
         text-align: center;
         width: clamp(2.625rem, 2.4269rem + 0.8451vw, 3.1875rem);
+      }
+
+      .btn--rating.selected {
+        background-color: var(--colors-orange-500);
+        color: var(--colors-grey-900);
       }
 
       .rate-us > .container {
