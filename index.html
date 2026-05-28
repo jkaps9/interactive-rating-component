@@ -55,8 +55,9 @@
                   </button>
                 </div>
               </div>
-
-              <button class="btn" type="submit">Submit</button>
+              <div class="submit-container">
+                <button class="btn" type="submit">Submit</button>
+              </div>
             </div>
           </div>
         </div>
@@ -113,7 +114,75 @@
 
       p {
         font-size: clamp(0.875rem, 0.853rem + 0.0939vw, 0.9375rem);
-        max-width: clamp(32ch, 50%, 35ch);
+        max-width: 32ch;
+      }
+
+      .container {
+        margin-inline: auto;
+        max-width: 1240px;
+        width: 90%;
+      }
+
+      .submit-container {
+        align-self: stretch;
+      }
+
+      .btn {
+        align-items: center;
+        align-self: stretch;
+        background: var(--colors-orange-500);
+        border: none;
+        border-radius: 22.5px;
+        color: var(--colors-grey-950);
+        display: inline-flex;
+        font-weight: 600;
+        font-size: 0.875rem;
+        justify-content: center;
+        padding-block: 1rem;
+      }
+
+      .btn--rating {
+        align-items: center;
+        background: var(--colors-grey-900);
+        border: none;
+        border-radius: 25.5px;
+        color: inherit;
+        display: inline-flex;
+        font-size: clamp(0.875rem, 0.831rem + 0.1878vw, 1rem);
+        font-weight: 700;
+        justify-content: center;
+        padding: clamp(0.5rem, 0.3239rem + 0.7512vw, 1rem)
+          clamp(1rem, 0.8239rem + 0.7512vw, 1.5rem);
+      }
+
+      .rate-us > .container {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
+
+      .rating-component {
+        align-items: center;
+        background: var(--colors-gradient-1);
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        padding: 2rem 1.5rem;
+      }
+
+      .rating-component__content {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      @media (min-width: 768px) {
+        p {
+          max-width: 35ch;
+        }
       }
     </style>
   </body>
