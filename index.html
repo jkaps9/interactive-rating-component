@@ -348,9 +348,39 @@
         justify-content: center;
       }
 
+      .success-message__content {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1.5rem, 1.3239rem + 0.7512vw, 2rem);
+        text-align: center;
+      }
+
+      .success-message__rating-container {
+        align-items: center;
+        background: var(--colors-grey-900);
+        border-radius: 22.5px;
+        color: var(--colors-orange-500);
+        display: flex;
+        justify-content: center;
+        min-height: 2rem;
+        padding: 0 1rem;
+      }
+
+      .success-message__text {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
       @media (min-width: 768px) {
         p {
           max-width: 35ch;
+        }
+
+        .success-message__text > p {
+          min-width: 35ch;
         }
 
         .btn {
