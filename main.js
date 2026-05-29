@@ -1,11 +1,11 @@
 let rating = "0";
 
 document.addEventListener("DOMContentLoaded", () => {
-  function unselectAll(buttonList) {
+  const unselectAll = (buttonList) => {
     buttonList.forEach((btn) => {
       btn.classList.remove("selected");
     });
-  }
+  };
 
   const ratingButtonContainer = document.querySelector(
     ".rating-component__rating-buttons",
