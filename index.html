@@ -437,9 +437,9 @@
           if (rating === "0") {
             alert("Please select a rating before submitting.");
           } else {
-            successMessage.focus();
-            successMessage.setAttribute("aria-hidden", "false");
             mainContent.setAttribute("aria-hidden", "true");
+            successMessage.setAttribute("aria-hidden", "false");
+            successMessage.focus();
           }
         });
       });
