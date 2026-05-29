@@ -408,15 +408,16 @@
           });
         }
 
-        const ratingButtons = document.querySelector(
+        const ratingButtonContainer = document.querySelector(
           ".rating-component__rating-buttons",
         );
         const userRating = document.querySelector("#user-rating");
 
-        ratingButtons.addEventListener("click", (e) => {
+        ratingButtonContainer.addEventListener("click", (e) => {
           const btn = e.target.closest(".btn--rating");
           if (!btn) return;
-          const ratingBtns = ratingContainer.querySelectorAll(".btn--rating");
+          const ratingBtns =
+            ratingButtonContainer.querySelectorAll(".btn--rating");
           unselectAll(ratingBtns);
           btn.classList.add("selected");
           rating = btn.dataset.rating;
@@ -436,9 +437,9 @@
           if (rating === "0") {
             alert("Please select a rating before submitting.");
           } else {
-            mainContent.setAttribute("aria-hidden", "true");
-            successMessage.setAttribute("aria-hidden", "false");
             successMessage.focus();
+            successMessage.setAttribute("aria-hidden", "false");
+            mainContent.setAttribute("aria-hidden", "true");
           }
         });
       });
