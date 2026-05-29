@@ -35,9 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       mainContent.setAttribute("aria-hidden", "true");
       successMessage.setAttribute("aria-hidden", "false");
-      successMessage
-        .querySelector(".success-message__rating-container > p")
-        .focus();
+      successMessage.focus();
     }
   });
 });
