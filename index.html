@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Overpass:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="icon"
       type="image/png"
@@ -439,7 +440,9 @@
           } else {
             mainContent.setAttribute("aria-hidden", "true");
             successMessage.setAttribute("aria-hidden", "false");
-            successMessage.focus();
+            successMessage
+              .querySelector(".success-message__rating-container > p")
+              .focus();
           }
         });
       });
